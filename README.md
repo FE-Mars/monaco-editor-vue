@@ -1,4 +1,4 @@
-# vue-monaco-editor
+# monaco-editor-vue
 
 > [Monaco Editor](https://github.com/Microsoft/monaco-editor) for Vue.
 
