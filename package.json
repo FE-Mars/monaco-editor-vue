@@ -1,6 +1,6 @@
 {
   "name": "monaco-editor-vue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Monaco Editor for Vue.",
   "main": "index.js",
   "scripts": {
