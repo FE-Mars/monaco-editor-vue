@@ -27,7 +27,7 @@ npm install monaco-editor-vue
       height="500"
       theme="vs-dark"
       language="javascript"
-      options={options}
+      :options="options"
       @change="onChange"
     ></MonacoEditor>
   </div>
