@@ -26,7 +26,7 @@ export default {
     },
 
     value() {
-      this.editor && this.value !== this.editor.getValue() && this.editor.setValue(this.value);
+      this.editor && this.value !== this._getValue() && this._setValue(this.value);
     },
 
     language() {
@@ -97,6 +97,19 @@ export default {
       });
     },
 
+    _setValue(value) {
+      if(this.editor){
+        let _editor = this.diffEditor ? this.editor.modifiedEditor : this.editor;
+        return _editor.setValue(value);
+      }
+    },
+
+    _getValue() {
+      if(!this.editor) return '';
+      let _editor = this.diffEditor ? this.editor.modifiedEditor : this.editor;
+      return _editor.getValue();
+    },
+
     _editorBeforeMount() {
       const options = this.editorBeforeMount(monaco);
       return options || {};
@@ -105,13 +118,13 @@ export default {
     _editorMounted(editor) {
       this.editorMounted(editor, monaco);
       if(this.diffEditor){
-        editor.onDidUpdateDiff(() => {
-          const value = editor.getModel().modified.getValue();
+        editor.onDidUpdateDiff((event) => {
+          const value = this._getValue();
           this._emitChange(value, event);
         });
       }else{
         editor.onDidChangeModelContent(event => {
-          const value = editor.getValue();
+          const value = this._getValue();
           this._emitChange(value, event);
         });
       }

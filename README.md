@@ -78,6 +78,7 @@ Otherwise, it behaves in uncontrolled mode.
 - `width` width of editor. Defaults to `100%`.
 - `height` height of editor. Defaults to `100%`.
 - `value` value of the auto created model in the editor.
+- `original` value of the auto created original model in the editor.
 - `language` the initial language of the auto created model in the editor. Defaults to `javascript`.
 - `theme` the theme of the editor. Defaults to `vs`.
 - `options` refer to [Monaco interface IEditorConstructionOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html).
