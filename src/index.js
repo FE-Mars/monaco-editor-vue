@@ -2,6 +2,8 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 
 function noop() { }
 
+export { monaco };
+
 export default {
   name: 'MonacoEditor',
   props: {
@@ -21,7 +23,7 @@ export default {
     options: {
       deep: true,
       handler(options) {
-        this.editor && this.editor.updateOptions(options)
+        this.editor && this.editor.updateOptions(options);
       }
     },
 
@@ -78,13 +80,18 @@ export default {
       const { value, language, theme, options } = this;
       Object.assign(options, this._editorBeforeMount());      //编辑器初始化前
       this.editor = monaco.editor[this.diffEditor ? 'createDiffEditor' : 'create'](this.$el, {
-        value: this.value,
-        language: this.language,
-        theme: this.theme,
+        value: value,
+        language: language,
+        theme: theme,
         ...options
       });
       this.diffEditor && this._setModel(this.value, this.original);
       this._editorMounted(this.editor);      //编辑器初始化后
+    },
+
+    _getEditor() {
+      if(!this.editor) return null;
+      return this.diffEditor ? this.editor.modifiedEditor : this.editor;
     },
 
     _setModel(value, original) {     //diff模式下设置model
@@ -98,16 +105,14 @@ export default {
     },
 
     _setValue(value) {
-      if(this.editor){
-        let _editor = this.diffEditor ? this.editor.modifiedEditor : this.editor;
-        return _editor.setValue(value);
-      }
+      let editor = this._getEditor();
+      if(editor) return editor.setValue(value);
     },
 
     _getValue() {
-      if(!this.editor) return '';
-      let _editor = this.diffEditor ? this.editor.modifiedEditor : this.editor;
-      return _editor.getValue();
+      let editor = this._getEditor();
+      if(editor) return '';
+      return editor.getValue();
     },
 
     _editorBeforeMount() {
