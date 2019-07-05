@@ -111,7 +111,7 @@ export default {
 
     _getValue() {
       let editor = this._getEditor();
-      if(editor) return '';
+      if(!editor) return '';
       return editor.getValue();
     },
 
