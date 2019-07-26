@@ -59,7 +59,7 @@ export default {
 Add the [Monaco Webpack plugin](https://github.com/Microsoft/monaco-editor-webpack-plugin) `monaco-editor-webpack-plugin` to your `webpack.config.js`:
 
 ```js
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 module.exports = {
   plugins: [
     new MonacoWebpackPlugin({
@@ -67,7 +67,24 @@ module.exports = {
       languages: ['javascript']
     })
   ]
-};
+}
+```
+
+If using [Vue CLI](https://cli.vuejs.org) instead of Webpack directly, you can add to `vue.config.js`:
+
+```js
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
+
+module.exports = {
+  chainWebpack: config => {
+    config.plugin('monaco-editor').use(MonacoWebpackPlugin, [
+      {
+        // Languages are loaded on demand at runtime
+        languages: ['json', 'javascript', 'html', 'xml']
+      }
+    ])
+  }
+}
 ```
 
 ## Properties
