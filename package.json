@@ -1,6 +1,6 @@
 {
   "name": "monaco-editor-vue",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Monaco Editor for Vue.",
   "main": "dist/index.js",
   "module": "dist/index",
@@ -14,20 +14,20 @@
   },
   "homepage": "https://github.com/FE-Mars/monaco-editor-vue",
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "babel-eslint": "^10.0.1",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-eslint": "^10.0.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0-0"
+    "eslint": "^6.8.0",
+    "eslint-plugin-vue": "^6.1.2"
   },
   "dependencies": {
-    "vue": "^2.5.17",
-    "monaco-editor": "^0.17.1"
+    "monaco-editor": "^0.19.3",
+    "vue": "^2.6.11"
   },
   "keywords": [
     "Vue",
