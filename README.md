@@ -99,9 +99,9 @@ Otherwise, it behaves in uncontrolled mode.
 - `language` the initial language of the auto created model in the editor. Defaults to `javascript`.
 - `theme` the theme of the editor. Defaults to `vs`.
 - `options` refer to [Monaco interface IEditorConstructionOptions](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.ieditorconstructionoptions.html).
+- `editorBeforeMount(monaco)` The function called before the editor mounted (similar to `beforeMount` of Vue).
+- `editorMounted(editor, monaco)` The function called when the editor has been mounted (similar to `mounted` of Vue).
 - `change(newValue, event)` an event emitted when the content of the current model has changed.
-- `editorBeforeMount(monaco)` an event emitted before the editor mounted (similar to `beforeMount` of Vue).
-- `editorMounted(editor, monaco)` an event emitted when the editor has been mounted (similar to `mounted` of Vue).
 
 ## Events & Methods
 
