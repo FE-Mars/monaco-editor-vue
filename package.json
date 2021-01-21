@@ -8,11 +8,11 @@
     "build": "babel src -d dist"
   },
   "prepublishOnly": "npm run build",
-  "repository": "https://github.com/FE-Mars/monaco-editor-vue",
+  "repository": "https://github.com/lucianodltec/monaco-editor-vue",
   "bugs": {
-    "url": "https://github.com/FE-Mars/monaco-editor-vue/issues"
+    "url": "https://github.com/lucianodltec/monaco-editor-vue/issues"
   },
-  "homepage": "https://github.com/FE-Mars/monaco-editor-vue",
+  "homepage": "https://github.com/lucianodltec/monaco-editor-vue",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
