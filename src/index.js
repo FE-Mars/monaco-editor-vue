@@ -132,17 +132,11 @@ export default {
           const value = this._getValue();
           this._emitChange(value, event);
         });
-        editor.onDidFocusEditor(event => {
+        editor.onDidFocusEditorText(event => {
           this.$emit('focus', event);
         });
-        editor.onDidFocusEditorText(event => {
-          this.$emit('focusText', event);
-        });
-        editor.onDidBlurEditor(event => {
-          this.$emit('blur', event);
-        });
         editor.onDidBlurEditorText(event => {
-          this.$emit('blurText', event);
+          this.$emit('blur', event);
         });
       }
     },
