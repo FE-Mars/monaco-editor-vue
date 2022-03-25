@@ -31,6 +31,10 @@ export default {
       this.editor && this.value !== this._getValue() && this._setValue(this.value);
     },
 
+    original() {
+      this.editor && this._setModel(this.value, this.original);
+    },
+
     language() {
       if(!this.editor) return;
       if(this.diffEditor){      //diff模式下更新language
