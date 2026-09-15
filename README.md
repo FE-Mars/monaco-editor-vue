@@ -11,7 +11,7 @@
 [downloads-image]: http://img.shields.io/npm/dm/monaco-editor-vue.svg
 [npm-image]: http://img.shields.io/npm/v/monaco-editor-vue.svg
 
-Requires **Vue 3.4+**, **monaco-editor 0.56+**, and an ESM bundler (Vite or Webpack 5). This package is ESM-only.
+Requires **Vue 3.4+**, **monaco-editor 0.56+**, and an ESM bundler (**Vite 6+** or Webpack 5). Vite 5 is not supported. This package is ESM-only.
 
 Vue 2 projects should stay on **`monaco-editor-vue@1.0.10`**.
 
@@ -24,6 +24,8 @@ npm install monaco-editor-vue monaco-editor
 `monaco-editor` is a peer dependency. The host app must install it and configure its web workers.
 
 ## Using with Vite
+
+Vite **6 or newer** is required. Vite 5 cannot resolve the Monaco 0.56 worker exports used by this package.
 
 Call `setupMonacoEnvironment` once before creating the editor. Vite's `?worker` imports only work in the app that Vite bundles, which is why this helper lives in a separate entry.
 

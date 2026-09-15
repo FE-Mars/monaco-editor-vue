@@ -31,7 +31,10 @@
     "test:watch": "vitest",
     "prepublishOnly": "npm run typecheck && npm run test && npm run build"
   },
-  "repository": "https://github.com/FE-Mars/monaco-editor-vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FE-Mars/monaco-editor-vue.git"
+  },
   "bugs": {
     "url": "https://github.com/FE-Mars/monaco-editor-vue/issues"
   },
@@ -63,5 +66,6 @@
     "monaco-editor-vue"
   ],
   "author": "jwong",
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": false
 }
