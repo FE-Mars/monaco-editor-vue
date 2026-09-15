@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  color: #e8e6e1;
+  background: #161513;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}

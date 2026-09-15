@@ -1,8 +1,0 @@
-.*
-*.md
-*.yml
-node_modules/
-babel.config.js
-.eslintrc
-.gitignore
-.npmignore

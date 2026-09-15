@@ -1,38 +1,64 @@
 {
   "name": "monaco-editor-vue",
-  "version": "1.0.10",
-  "description": "Monaco Editor for Vue.",
-  "main": "dist/index.js",
-  "module": "dist/index",
-  "scripts": {
-    "build": "babel src -d dist"
+  "version": "2.0.0",
+  "description": "Monaco Editor for Vue 3.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./vite": {
+      "types": "./dist/vite.d.ts",
+      "import": "./dist/vite.js"
+    }
   },
-  "prepublishOnly": "npm run build",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "scripts": {
+    "dev": "vite --config playground/vite.config.ts",
+    "build": "tsdown",
+    "build:playground": "vite build --config playground/vite.config.ts",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
   "repository": "https://github.com/FE-Mars/monaco-editor-vue",
   "bugs": {
     "url": "https://github.com/FE-Mars/monaco-editor-vue/issues"
   },
   "homepage": "https://github.com/FE-Mars/monaco-editor-vue",
-  "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "babel-eslint": "^10.0.3",
-    "babel-helper-vue-jsx-merge-props": "^2.0.3",
-    "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.7.0",
-    "babel-preset-env": "^1.7.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^6.1.2"
+  "peerDependencies": {
+    "monaco-editor": "^0.56.0",
+    "vue": "^3.4.0"
   },
-  "dependencies": {
-    "monaco-editor": "^0.19.3",
-    "vue": "^2.6.11"
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^18.0.1",
+    "monaco-editor": "^0.56.0",
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.2",
+    "unplugin-vue": "^7.0.1",
+    "vite": "^7.1.5",
+    "vitest": "^3.2.4",
+    "vue": "^3.5.21",
+    "vue-tsc": "^3.0.7"
   },
   "keywords": [
     "Vue",
+    "Vue3",
     "monaco",
     "monaco-editor",
+    "vite",
     "vue-monaco-editor",
     "monaco-editor-vue"
   ],
